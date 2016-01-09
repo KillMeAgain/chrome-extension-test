@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "储蓄短信批量查询",
+  "description": "储蓄短信批量查询-test version",
+  "version": "1.0",
+
+  "page_action": {
+    "default_icon": "icon.png",
+    "default_title": "Click here!"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches" : ["http://localhost/*"],
+      "js": ["jquery.min.js","content.js"]
+    }
+  ],
+  "web_accessible_resources":["bat.xml","result.txt"],
+  "permissions": [
+  "tabs", 
+  "http://localhost/*", 
+  "activeTab",
+  "cookies",
+  "declarativeContent"
+  ]
+}
